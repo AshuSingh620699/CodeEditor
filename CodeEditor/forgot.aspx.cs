@@ -7,13 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace CodeEditor
 {
     public partial class forgot : System.Web.UI.Page
     {
         private static string OTP = "";
-        static string constr = "Server=Ashutosh\\SQLEXPRESS;Database=ASH;Integrated Security=True;";
+
+        string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -74,7 +76,7 @@ namespace CodeEditor
 
                 // Update the password in the database
                 string query = "UPDATE users SET password = @newPassword WHERE Email = @Email";
-                using (SqlConnection conn = new SqlConnection(constr))
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -114,7 +116,7 @@ namespace CodeEditor
             string user = "";
             if (email.Contains("@"))
             {
-                using (SqlConnection con = new SqlConnection(constr))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = "select Username from Users where Email =  @email";
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -129,7 +131,7 @@ namespace CodeEditor
                     con.Close();
                 }
             }
-            using (SqlConnection con = new SqlConnection(constr))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = "update passwords set password = @password where username = @user";
                 SqlCommand cmd = new SqlCommand(query, con);
