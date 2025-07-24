@@ -1,0 +1,138 @@
+﻿/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Form container styling */
+.form-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .input-group label {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 30px;
+        color: #fff;
+        outline: none;
+        font-size: 16px;
+        transition: background 0.3s ease-in-out;
+    }
+
+        .input-group input::placeholder {
+            color: #e0e0e0;
+        }
+
+        .input-group input:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+/* Button styling */
+#Button,#Button1 {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 1s linear;
+}
+
+    #Button:hover {
+        background: #8361be;
+    }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .signup-link a {
+        color: #8361be;
+        text-decoration: none;
+    }
+.forgot-link a{
+    color: #8361be;
+    text-decoration: none;
+}
+.forgot-link {
+    text-align: end;
+    margin-top: 8px;
+}
+    .forgot-link a:hover {
+        text-decoration: underline;
+    }
+
+    .signup-link a:hover {
+        text-decoration: underline;
+    }
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .login-link a {
+        color: #8361be;
+        text-decoration: none;
+    }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }

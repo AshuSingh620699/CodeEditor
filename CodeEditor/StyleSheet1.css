@@ -1,0 +1,187 @@
+﻿/* Basic styles for layout */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+body::-webkit-scrollbar{
+        display:none;
+}
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+.navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+}
+
+.navbar .nav-links {
+        list-style: none;
+        display: flex;
+}
+
+.navbar .nav-links li {
+            margin-right: 20px;
+}
+
+.navbar .nav-links a {
+            color: #fff;
+            text-decoration: none;
+}
+
+.navbar .profile {
+        display: flex;
+        align-items: center;
+}
+
+.navbar .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+}
+
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 300px;
+/*    background-color: #2c3e50;*/
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    position: sticky;
+    height: 100vh;
+    top:0;
+    overflow-y: auto;
+}
+
+h3 {
+    color: #e74c3c;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.scard {
+    background-color: #34495e;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.scard h4 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+}
+
+.scard p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        color: #bdc3c7;
+}
+
+.sproject-card:hover {
+    background-color: #1abc9c;
+    cursor: pointer;
+}
+
+.main-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+        margin: 0;
+}
+
+.project-card button {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+}
+
+.project-card h4 {
+        color: black;
+}
+
+.edtbtn {
+    padding: 10px 30px;
+    background: transparent;
+    color: black;
+    border: 2px solid #8361be;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color,background 0.5s linear;
+}
+.edtbtn:hover {
+        color: #fff;
+        background-color: #8361be;
+}
+.redBtn {
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 50px;
+    background: transparent;
+    border: 2px solid white;
+    transition: background 0.5s linear;
+    position: absolute;
+    left: 65%;
+    font-weight: 1000;
+}
+
+.redBtn:hover {
+    background-color: #e82084;
+}
+
+.button-51 {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-weight:800;
+}
+
+    .button-51:hover {
+        background-color: #16a085;
+    }
+
+.input {
+    width: max-content;
+    padding:10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin:10px;
+}
+
+.fancy-label{
+    margin:10px 20px;
+}
