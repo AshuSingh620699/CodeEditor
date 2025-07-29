@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace CodeEditor
@@ -23,7 +24,7 @@ namespace CodeEditor
             }
 
             // Define connection string
-            string connectionString = "Server=Ashutosh\\SQLEXPRESS;Database=ASH;Integrated Security=True;";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             // Determine if the input is an email (contains '@') or username
             string query;

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http;
@@ -119,9 +120,10 @@ namespace CodeEditor
         protected void loadProject(string projectID)
         {
             int projectId = Convert.ToInt32(projectID);
-            string connStr = "Data Source=Ashutosh\\SQLEXPRESS;Initial Catalog=ASH;Integrated Security=True";
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 string query = "SELECT ProjectName, Language, Code FROM Projects WHERE ProjectID = @ProjectID";
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -145,9 +147,10 @@ namespace CodeEditor
             string projectName = txtProjectName.Text;
             string language = ddlLanguage.SelectedValue;
             string code = editor.Value;
-            string connStr = "Data Source=Ashutosh\\SQLEXPRESS;Initial Catalog=ASH;Integrated Security=True";
 
-            using (SqlConnection conn = new SqlConnection(connStr))
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 SqlCommand cmd;
                 if (!string.IsNullOrEmpty(hfProjectID.Value)) // Edit existing project

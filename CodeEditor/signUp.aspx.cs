@@ -9,6 +9,7 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace CodeEditor
 {
@@ -62,7 +63,7 @@ namespace CodeEditor
 
 
             // Define connection string
-            string connectionString = "Server=Ashutosh\\SQLEXPRESS;Database=ASH;Integrated Security=True;";
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -117,8 +118,9 @@ namespace CodeEditor
         }
         private void savePassword(string usernameOrEmail, string userPassword)
         {
-            string conStr = "Server=Ashutosh\\SQLExpress;Database=ASH;Integrated Security = True";
-            using (SqlConnection con = new SqlConnection(conStr))
+
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = "insert into passwords (username, password) values (@username, @password)";
                 SqlCommand cmd = new SqlCommand(query, con);

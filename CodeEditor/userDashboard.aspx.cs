@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.IO;
@@ -67,8 +68,9 @@ namespace CodeEditor
             }
             if (Session["ID"] != null)
             {
-                string connStr = "Data Source=Ashutosh\\SQLEXPRESS;Initial Catalog=ASH;Integrated Security=True";
-                using (SqlConnection conn = new SqlConnection(connStr))
+
+                string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"
                         SELECT ProjectID, ProjectName, Language, LastEdited 
@@ -105,8 +107,9 @@ namespace CodeEditor
             }
             if (Session["ID"] != null)
             {
-                string connStr = "Data Source=Ashutosh\\SQLEXPRESS;Initial Catalog=ASH;Integrated Security=True";
-                using (SqlConnection conn = new SqlConnection(connStr))
+
+                string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = @"SELECT ProjectName, LastEdited FROM Projects WHERE ID = @ID ORDER BY ProjectName
                         OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY;";
@@ -135,7 +138,9 @@ namespace CodeEditor
             Button delbtn = (Button)sender;
             int ProjectId = Convert.ToInt32(delbtn.CommandArgument);
 
-            using (SqlConnection con = new SqlConnection("Data Source = Ashutosh\\SQLEXPRESS; Initial Catalog = ASH; Integrated Security = True"))
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string Query = "DELETE FROM PROJECTS WHERE ProjectID = @ProjectID";
                 SqlCommand sql = new SqlCommand(Query, con);

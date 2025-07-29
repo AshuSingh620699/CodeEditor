@@ -224,7 +224,7 @@
     <Content Include="favicon.ico" />
     <Content Include="forgot.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="HomePage.html" />
+    <Content Include="Default.aspx" />
     <Content Include="image.jpg" />
     <Content Include="Projects.aspx" />
     <Content Include="rb_2148244398.png" />
