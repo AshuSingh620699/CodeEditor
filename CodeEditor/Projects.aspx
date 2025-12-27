@@ -276,7 +276,7 @@
 
             function goBack() {
                 if (confirm("Are you sure you want to cancel?")) {
-                    window.history.back();
+                    window.location.href ="userDashboard.aspx";
                 }
             }
 
