@@ -18,8 +18,10 @@ namespace CodeEditor
     public partial class Projects : System.Web.UI.Page
     {
 
-        private static readonly string JDoodleClientID = Environment.GetEnvironmentVariable("JDOODLE_CLIENT_ID");
-        private static readonly string JDoodleClientSecret = Environment.GetEnvironmentVariable("JDOODLE_CLIENT_SECRET");
+        //private static readonly string JDoodleClientID = Environment.GetEnvironmentVariable("JDOODLE_CLIENT_ID");
+        //private static readonly string JDoodleClientSecret = Environment.GetEnvironmentVariable("JDOODLE_CLIENT_SECRET");
+        private static readonly string JDoodleClientID = ConfigurationManager.AppSettings["JDoodleClientID"];
+        private static readonly string JDoodleClientSecret = ConfigurationManager.AppSettings["JDoodleClientSecret"];
 
 
         protected void Page_Load(object sender, EventArgs e)

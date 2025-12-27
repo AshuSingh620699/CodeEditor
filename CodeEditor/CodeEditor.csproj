@@ -199,6 +199,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="compiler.png" />
     <Content Include="computer-program-code.jpg" />
     <Content Include="Contact.aspx" />
